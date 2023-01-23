@@ -9,6 +9,16 @@ Local or remote CD tray ejection, for Linux.
 
 ## Usage
 
+### With Docker
+
+Run the container using this command:
+
+    docker run -d --device /dev/cdrom:/dev/cdrom -p 3280:3280 --restart unless-stopped --name cupholder luois45/cupholder
+
+And execute it by using as described in [Web server](https://github.com/Luois45/cupholder#web-server)
+
+### Without Docker
+
     cupholder
 
 Or when building a project that takes a while, as a notification utility:
