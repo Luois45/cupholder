@@ -72,6 +72,38 @@ func generateEjectionHandler(deviceFilenames []string) func(w http.ResponseWrite
 	}
 }
 
+func generateClosetrayHandler(deviceFilenames []string) func(w http.ResponseWriter, req *http.Request) {
+	return func(w http.ResponseWriter, req *http.Request) {
+		fmt.Fprint(w, "<!doctype html><html><head><title>Cupholder</title><style>html { height: 100%; } body { height: 100%; background: rgb(95,159,221); background-image: linear-gradient(rgba(95,159,221,1) 0%, rgba(95,159,221,1) 6em, rgba(218,192,168,1) 6em, rgba(224,250,255,1) 100%); margin: 3em; overflow: hidden; } h1 { color: orange; text-shadow: 2px 2px 4px #000F; }</style><body>")
+		fmt.Fprintf(w, "<h1>%s</h1><br>", versionString)
+		for _, deviceFilename := range deviceFilenames {
+			fmt.Fprintf(w, "<strong>[cupholder]</strong>&nbsp;&nbsp;<code>Closing the tray %s...</code> ", deviceFilename)
+
+			// Opening
+			cd, err := cdrom.NewFile(deviceFilename)
+			if err != nil {
+				fmt.Fprintf(w, "<code>error: %v</code><br>", err)
+			}
+
+			// Closing the tray
+			if err := cd.Closetray(); err != nil {
+				fmt.Fprintf(w, "<code>error: %v</code><br>", err)
+				_ = cd.Done() // Try closing, but only output the other error
+				continue
+			}
+
+			// Closing
+			if err := cd.Done(); err != nil {
+				fmt.Fprintf(w, "<code>error: %v</code><br>", err)
+				continue
+			}
+
+			// All done, for this device filename
+			fmt.Fprintln(w, "<code>ok</code><br>")
+		}
+	}
+}
+
 func main() {
 	o := textoutput.New()
 	if appErr := (&cli.App{
@@ -99,6 +131,7 @@ func main() {
 			if c.Bool("server") {
 				// Set up a HTTP server that is ready to eject the CD ROM at requests on port 0x0CD0 (3280)
 				http.HandleFunc("/", generateEjectionHandler(deviceFilenames))
+				http.HandleFunc("/closetray", generateClosetrayHandler(deviceFilenames))
 				o.Println("<blue>Listening for ejection requests at <yellow>http://localhost:3280/<off>")
 				return http.ListenAndServe(":3280", nil)
 			}
