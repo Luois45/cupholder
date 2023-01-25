@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/urfave/cli/v2"
-	"github.com/xyproto/cdrom"
+	"github.com/Luois45/cdrom"
 	"github.com/xyproto/textoutput"
 )
 
