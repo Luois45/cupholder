@@ -9,7 +9,7 @@ require (
 	github.com/pkg/term v1.1.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/urfave/cli/v2 v2.3.0
-	github.com/Luois45/cdrom v1.4.0
+	github.com/Luois45/cdrom v1.4.1
 	github.com/xyproto/textoutput v1.12.2
 	github.com/xyproto/vt100 v1.8.6 // indirect
 )

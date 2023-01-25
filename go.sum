@@ -1,4 +1,6 @@
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
+github.com/Luois45/cdrom v1.4.1 h1:uQa8VjiKVZsxXrJV4In+wH+NbRZ0qV828QykeT6xLVM=
+github.com/Luois45/cdrom v1.4.1/go.mod h1:BLhoVBszghFVYC6J9ZIuOq3IC9CFbwEWMgaI0APNr9E=
 github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d h1:U+s90UTSYgptZMwQh2aRr3LuazLJIa+Pg3Kc1ylSYVY=
 github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsrgA7czyZG/E6dU=
 github.com/cpuguy83/go-md2man/v2 v2.0.0 h1:EoUDS0afbrsXAZ9YQ9jdu/mZ2sXgT1/2yyNng4PGlyM=
@@ -27,8 +29,6 @@ github.com/shurcooL/sanitized_anchor_name v1.0.0 h1:PdmoCO6wvbs+7yrJyMORt4/BmY5I
 github.com/shurcooL/sanitized_anchor_name v1.0.0/go.mod h1:1NzhyTcUVG4SuEtjjoZeVRXNmyL/1OwPU0+IJeTBvfc=
 github.com/urfave/cli/v2 v2.3.0 h1:qph92Y649prgesehzOrQjdWyxFOp/QVM+6imKHad91M=
 github.com/urfave/cli/v2 v2.3.0/go.mod h1:LJmUH05zAU44vOAcrfzZQKsZbVcdbOG8rtL3/XcUArI=
-github.com/xyproto/cdrom v1.3.0 h1:cqXCfR9QOeOjh7ftn+RfOyD5+Uj49GTtgOlkmC+rZ6w=
-github.com/xyproto/cdrom v1.3.0/go.mod h1:eOF0jFIjDOG7DVgEQnmSberc7ulqFVsu7HTSLnSJnyw=
 github.com/xyproto/textoutput v1.12.2 h1:YN4jWc4tjx42xWCwS5NYBJ9Bj3wH7wZrZNL3qZs/eJs=
 github.com/xyproto/textoutput v1.12.2/go.mod h1:STHz0FZrKHctsEP449lprZKy4fK/ylaz5FX5StD3TDI=
 github.com/xyproto/vt100 v1.8.5 h1:Q4BZYFnqXiSF/RZD77mO+E4fbtkEx8we/YCF2Vtauvw=
